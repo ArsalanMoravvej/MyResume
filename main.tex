@@ -1,0 +1,177 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+\newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+\geometry{left=1.2cm,right=1.2cm,top=0.5cm,bottom=0.5cm,columnsep=0.5cm}
+\usepackage{paracol}
+\ifxetexorluatex
+
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{C69749}
+  \definecolor{SecondaryColor}{HTML}{D49B54}
+  \definecolor{ThirdColor}{HTML}{1877E8}
+  \definecolor{BodyColor}{HTML}{ABABAB}
+  \definecolor{EmphasisColor}{HTML}{ABABAB}
+  \definecolor{BackgroundColor}{HTML}{191919}
+\else%
+  \definecolor{PrimaryColor}{HTML}{001F5A}
+  \definecolor{SecondaryColor}{HTML}{0039AC}
+  \definecolor{ThirdColor}{HTML}{F3890B}
+  \definecolor{BodyColor}{HTML}{666666}
+  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%% \addbibresource{main.bib}
+
+\begin{document}
+    \name{Mohammad (Arsalan) Moravvej}
+    \tagline{Data Analyst}
+    
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    \AtBeginEnvironment{itemize}{\small}
+    
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.35}
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+        \cvsection{Contact}
+                \email{\underline{moravvejmohammad97@gmail.com}}\\\smallskip
+                \phone{09368572785}\\\smallskip
+                \linkedin{\underline{mohammad-mrj}}\\\smallskip
+                \github{\underline{ArsalanMoravvej}}
+        
+        % ----- TECH STACK -----
+        \cvsection{Skills}
+            %% Fork v1.6.5c: The sloppypar* environment is used to avoid tags overlapping with section width
+            \begin{sloppypar*}
+                \cvtags{Python, Data Analysis, Numpy, Pandas, Data Visualization, Matplotlib, Web Scraping, Databases, MySQL, SQLAlchemy, Datawarehousing, Statistics Analysis, Machine learning, Sci-kit Learn, Microsoft Power BI, Git, Communication, Critical thinking, Teamwork}
+            \end{sloppypar*}
+        % ----- TECH STACK -----
+        
+        % ----- LEARNING -----
+        \cvsection{Learning}
+            \begin{sloppypar}
+                \cvtags{Deep Learning, Linux, Developing APIs, Algorithms, Data Structures, Apache Spark}
+                \medskip
+            \end{sloppypar}
+        % ----- LEARNING -----
+
+        \cvsection{Certificates}
+
+            \cvcert{TASK-ORIENTED BOOTCAMP IN DATA ANALYSIS WITH PYTHON}{Quera}{\faCalendar { Jul 2023}}{{\cvreference{\faGlobe \underline{ Link}}{https://quera.org/certificate/IZqFa07q/}}}\\
+            \divider
+            \cvcert{Machine Learning}{Coursera}{\faCalendar { Apr 2022}}{{\cvreference{\faGlobe \underline{ Link}}{https://www.coursera.org/account/accomplishments/certificate/VVKTE3ZMT7DL}}}\\
+            \divider
+            \cvcert{Neural Networks and Deep Learning}{Coursera}{\faCalendar { May 2022}}{{\cvreference{\faGlobe \underline{ Link}}{https://www.coursera.org/account/accomplishments/certificate/EGECLMGFDD9P}}}
+            
+
+
+        
+        % ----- LANGUAGES -----
+        \cvsection{Languages}
+            \cvlang{Persian}{Native}\\
+            \divider
+
+            \cvlang{English}{Advanced - C1}\\
+            \divider
+
+            \cvlang{German}{Elementary - A2}
+
+
+         % ------------------------------ Second Column ---------------------------
+        \switchcolumn
+        
+        % ----- ABOUT ME -----
+        \cvsection{About Me}
+            
+                {Junior \textbf{Data Analyst}, Interested in acquiring skills and Learning new things, I love solving new challenges, basically anything, especially if it’s about data!
+                Seeking to leverage my analytical skills and expertise to provide valuable insights and facilitate data-driven decision-making.
+                looking forward to being part of a productive team, and grow in its ecosystem.}
+
+        % ----- ABOUT ME -----
+        
+        % ----- EXPERIENCE -----
+        \cvsection{Experience}
+            \cvevent{Data Analysis Internship}{Quera}{Apr 2023 -- Jul 2023}{Remote}
+            \begin{itemize}
+                \item Tools for \textbf{Data Preparation}, \textbf{Visualization} and \textbf{Web Scraping} with Python
+                \item \textbf{Relational Databases}, design and Implementation of a robust and optimized databases from the scratch
+                \item \textbf{Statistical Analysis} of data and developing \textbf{Machine Learning} models
+                \item Creating dashboards and visualizations using tools like \textbf{Microsoft Power BI} and \textbf{Streamlit}
+                \item During this internship I have developed two semi-industrial data analysis projects together with my teammates
+            \end{itemize}
+        % ----- EXPERIENCE -----
+        
+        % ----- EDUCATION -----
+        \cvsection{Education}
+            \cvevent{Associate's Degree}{Iran Technical and Vocational University}{Sept 2014 -- Dec 2016}{Rasht, Guilan}
+            \begin{itemize}
+                \item {Field of Study: Electronics - General Electronics}
+            \end{itemize}
+            \divider
+            
+            \cvevent{Bachelor's Degree}{Iran Technical and Vocational University}{Jan 2017 -- Sept 2019}{Rasht, Guilan}
+            \begin{itemize}
+                \item {Field of Study: Electrical Engineering -  Electronics}
+            \end{itemize}
+        % ----- EDUCATION -----
+        
+        % ----- PROJECTS -----
+        \cvsection{Projects}
+            \cvevent{Transfemarkt Data Analysis}{\cvreference{\faGithub \underline{Github Repository}}{https://github.com/ArsalanMoravvej/Transfermarket-project}}{May 2023}{}
+            \begin{itemize}
+                \item Together with my teammates, we analyzed the \textcolor{accent}{\href{https://www.transfermarkt.com/}{\underline{Transfermarkt}}} site data.
+                \item First, according to the desired analysis, I designed and implemented a suitable database using \textbf{SQLAlchemy} (a library for communication between Python scripts and databases), and then we scraped data with the help of the designed schema.
+                \item By entering the data into the database, everything was ready for \textbf{data cleaning}, \textbf{statistical analysis}, and \textbf{machine learning} model development.
+                \item  Finally, I visualized the steps and results and built a dashboard using \textbf{Streamlit}.
+            \end{itemize}
+            \divider
+            
+            \cvevent{Superstore Data Analysis (a retail store)}{\cvreference{\faGithub \underline{Github Repository}}{https://github.com/ArsalanMoravvej/Superstore}}{June 2023}{}
+            \begin{itemize}
+                \item Together with our teammates, we analyzed the data of \underline{Superstore} (a retail store).
+                \item  First, with the help of the given givern schema, we designed a \textbf{data warehouse} (inside Power BI).
+                \item  Then, based on the data, we performed the desired \textbf{statistical analysis} and the developed \textbf{machine learning} models.
+                \item  Finally, with the help of \textbf{Power BI}, we built a dashboard to illustrate and implement business intelligence.
+            \end{itemize}
+        % ----- PROJECTS -----
+    \end{paracol}
+\end{document}
