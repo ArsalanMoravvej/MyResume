@@ -1,11 +1,21 @@
 # My Résumé / CV
 
-This is a repository for sharing my Résumé. I built it using Latex with the help of [Overleaf](https://www.overleaf.com/) online Tex editor and by customizing one of its templates (you can find it in `/Tempalte` folder).
+This is a repository for sharing my Résumé. It's written in LaTeX as an ATS-friendly, single-column layout: the standard `article` class with the Lato font and plain, machine-readable text, so applicant tracking systems can parse it correctly.
 
-(Files `altacv.cls` and `main.tex`)
+- `main.tex`: source of my Résumé
+- `CV_Mohammad_Moravvej.pdf`: compiled PDF
+- `Template/`: an empty version with placeholders that you can fill in with your own details
 
-In order to build your own Résumé you can either simply clone this repository and start modifying it (Online editors like Overleaf itself are recommended) or go to [Overleaf (Templates — Résumé / CV
-)](https://www.overleaf.com/latex/templates/tagged/cv) and choose a Template online.
+## Build
 
+Compile with `pdflatex`:
 
-![Example 1](CV.png)
+```bash
+pdflatex main.tex
+```
+
+Or upload `main.tex` to [Overleaf](https://www.overleaf.com/) and click **Recompile**. Overleaf already has every package this needs.
+
+To make your own Résumé, clone this repository and edit `Template/main.tex`.
+
+![My CV](CV.png)

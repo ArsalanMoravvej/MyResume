@@ -1,177 +1,114 @@
-\PassOptionsToPackage{dvipsnames}{xcolor}
-\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
-\newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
-\geometry{left=1.2cm,right=1.2cm,top=0.5cm,bottom=0.5cm,columnsep=0.5cm}
-\usepackage{paracol}
-\ifxetexorluatex
+% ATS-optimized version of resume_single_column.tex
+% Replace every [X] / [ ... ] placeholder with real figures before sending.
+\documentclass[10pt,a4paper]{article}
+\usepackage[left=1.6cm,right=1.6cm,top=1.2cm,bottom=1.2cm]{geometry}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[defaultsans]{lato}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = *}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Mohammad Moravvej - Backend Developer Resume},pdfauthor={Mohammad Moravvej}}
 
-  % If using xelatex or lualatex:
-  \setmainfont{Roboto Slab}
-  \setsansfont{Lato}
-  \renewcommand{\familydefault}{\sfdefault}
-\else
-  % If using pdflatex:
-  \usepackage[rm]{roboto}
-  \usepackage[defaultsans]{lato}
-  % \usepackage{sourcesanspro}
-  \renewcommand{\familydefault}{\sfdefault}
-\fi
+\definecolor{primary}{HTML}{001F5A}
+\definecolor{accent}{HTML}{0039AC}
+\definecolor{rule}{HTML}{F3890B}
+\definecolor{body}{HTML}{333333}
+\definecolor{muted}{HTML}{666666}
 
-% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
-\ifdarkmode%
-  \definecolor{PrimaryColor}{HTML}{C69749}
-  \definecolor{SecondaryColor}{HTML}{D49B54}
-  \definecolor{ThirdColor}{HTML}{1877E8}
-  \definecolor{BodyColor}{HTML}{ABABAB}
-  \definecolor{EmphasisColor}{HTML}{ABABAB}
-  \definecolor{BackgroundColor}{HTML}{191919}
-\else%
-  \definecolor{PrimaryColor}{HTML}{001F5A}
-  \definecolor{SecondaryColor}{HTML}{0039AC}
-  \definecolor{ThirdColor}{HTML}{F3890B}
-  \definecolor{BodyColor}{HTML}{666666}
-  \definecolor{EmphasisColor}{HTML}{2E2E2E}
-  \definecolor{BackgroundColor}{HTML}{E2E2E2}
-\fi%
+\color{body}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
 
-\colorlet{name}{PrimaryColor}
-\colorlet{tagline}{SecondaryColor}
-\colorlet{heading}{PrimaryColor}
-\colorlet{headingrule}{ThirdColor}
-\colorlet{subheading}{SecondaryColor}
-\colorlet{accent}{SecondaryColor}
-\colorlet{emphasis}{EmphasisColor}
-\colorlet{body}{BodyColor}
-\pagecolor{BackgroundColor}
+\titleformat{\section}{\large\bfseries\color{primary}}{}{0em}{\MakeUppercase}[{\vspace{-0.2em}\color{rule}\titlerule}]
+\titlespacing*{\section}{0pt}{11pt}{5pt}
 
-% Change some fonts, if necessary
-\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
-\renewcommand{\personalinfofont}{\small\bfseries}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
-\renewcommand{\cvsubsectionfont}{\large\bfseries}
+\setlist[itemize]{leftmargin=1.1em,itemsep=2pt,topsep=2pt,parsep=0pt,label=\textcolor{muted}{\textbullet}}
 
-% Change the bullets for itemize and rating marker
-% for \cvskill if you want to
-\renewcommand{\itemmarker}{{\small\textbullet}}
-\renewcommand{\ratingmarker}{\faCircle}
+\newcommand{\role}[4]{%
+  {\bfseries #1} \textcolor{accent}{| #2}\hfill {\small\color{muted}#3 \ | \ #4}\par}
 
-%% sample.bib contains your publications
-%% \addbibresource{main.bib}
+\newcommand{\skillrow}[2]{{\bfseries\color{accent}#1:} #2\par\vspace{1.5pt}}
 
 \begin{document}
-    \name{Mohammad (Arsalan) Moravvej}
-    \tagline{Data Analyst}
-    
-    \makecvheader
-    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-    \AtBeginEnvironment{itemize}{\small}
-    
-    %% Set the left/right column width ratio to 6:4.
-    \columnratio{0.35}
 
-    % Start a 2-column paracol. Both the left and right columns will automatically
-    % break across pages if things get too long.
-    \begin{paracol}{2}
-        \cvsection{Contact}
-                \email{\underline{moravvejmohammad97@gmail.com}}\\\smallskip
-                \phone{09368572785}\\\smallskip
-                \linkedin{\underline{mohammad-mrj}}\\\smallskip
-                \github{\underline{ArsalanMoravvej}}
-        
-        % ----- TECH STACK -----
-        \cvsection{Skills}
-            %% Fork v1.6.5c: The sloppypar* environment is used to avoid tags overlapping with section width
-            \begin{sloppypar*}
-                \cvtags{Python, Data Analysis, Numpy, Pandas, Data Visualization, Matplotlib, Web Scraping, Databases, MySQL, SQLAlchemy, Datawarehousing, Statistics Analysis, Machine learning, Sci-kit Learn, Microsoft Power BI, Git, Communication, Critical thinking, Teamwork}
-            \end{sloppypar*}
-        % ----- TECH STACK -----
-        
-        % ----- LEARNING -----
-        \cvsection{Learning}
-            \begin{sloppypar}
-                \cvtags{Deep Learning, Linux, Developing APIs, Algorithms, Data Structures, Apache Spark}
-                \medskip
-            \end{sloppypar}
-        % ----- LEARNING -----
+{\Huge\bfseries\color{primary}MOHAMMAD (ARSALAN) MORAVVEJ}\par
+\vspace{2pt}
+{\large\bfseries\color{accent}Backend Developer | PHP, Laravel, Python}\par
+\vspace{4pt}
+{\small
+Rasht/Tehran, Iran \ (Open to relocation and remote) \ | \
+Phone: +98 936 857 2785  \par
+Email: \href{mailto:moravvejmohammad97@gmail.com}{moravvejmohammad97@gmail.com} \ | \
+% LinkedIn: \href{https://linkedin.com/in/[your-handle]}{linkedin.com/in/[your-handle]} \ | \
+GitHub: \href{https://github.com/ArsalanMoravvej}{github.com/ArsalanMoravvej}
+}
 
-        \cvsection{Certificates}
+\section{Summary}
+Backend Developer with 1+ year of production experience building and scaling high-traffic \textbf{PHP/Laravel} systems. Built and owns an automated publishing pipeline handling +300 publications per week and an AI-assisted product-ranking engine serving +30K users per week. Experienced with \textbf{Linux}, \textbf{Docker}, \textbf{Nginx}, \textbf{Redis} queues and \textbf{MySQL}, with a data-analysis background (\textbf{Python}, statistics) used to measurably improve ranking quality.
 
-            \cvcert{TASK-ORIENTED BOOTCAMP IN DATA ANALYSIS WITH PYTHON}{Quera}{\faCalendar { Jul 2023}}{{\cvreference{\faGlobe \underline{ Link}}{https://quera.org/certificate/IZqFa07q/}}}\\
-            \divider
-            \cvcert{Machine Learning}{Coursera}{\faCalendar { Apr 2022}}{{\cvreference{\faGlobe \underline{ Link}}{https://www.coursera.org/account/accomplishments/certificate/VVKTE3ZMT7DL}}}\\
-            \divider
-            \cvcert{Neural Networks and Deep Learning}{Coursera}{\faCalendar { May 2022}}{{\cvreference{\faGlobe \underline{ Link}}{https://www.coursera.org/account/accomplishments/certificate/EGECLMGFDD9P}}}
-            
+\section{Experience}
+\role{Backend Developer}{Tesmino}{Jun 2025 \textendash\ Present}{Rasht, Iran}
+\begin{itemize}
+  \item Engineered \textbf{Chabok}, an automated reportage-publishing platform in \textbf{Laravel}, delivering 400+ automated reportages each week and eliminating over 50 hours of manual effort per week.
+  \item Developed \textbf{Topical Relevancy}, an AI-assisted product-ranking engine that scores products by indexed content, search volume and keyword rank.
+  \item Ran statistical comparisons of ranking algorithms and shipped the best performer, improving ranking accuracy.
+  \item Built automated monitoring services that track reportage and backlink health across \textasciitilde 3000 publisher websites, detecting broken or removed links within few hours instead of many days manually.
+  \item Maintained and refactored a large legacy \textbf{Laravel} codebase; deployed services with \textbf{Docker}, \textbf{Nginx} and \textbf{Redis}/\textbf{Horizon} queues on \textbf{Linux}.
+\end{itemize}
+\vspace{3pt}
+\role{Software Support Specialist}{ICAN Engineering Group}{Dec 2023 \textendash\ Jan 2025}{Tehran, Iran}
+\begin{itemize}
+  \item Administered \textbf{SQL Server} databases for office-automation and attendance software used by client organizations.
+  \item Wrote \textbf{SQL} queries and scripts for reporting, data fixes and migrations, resolving  support tickets.
+\end{itemize}
+\vspace{3pt}
+\role{Data Analyst Intern}{Quera}{Apr 2023 \textendash\ Jul 2023}{Remote}
+\begin{itemize}
+  \item Designed relational databases, built \textbf{machine learning} models in \textbf{Python} and interactive \textbf{Power BI} dashboards on real-world datasets.
+\end{itemize}
+
+\section{Technical Skills}
+\skillrow{Languages}{PHP, Python, SQL}
+\skillrow{Frameworks}{Laravel, FastAPI}
+\skillrow{Databases}{MySQL, PostgreSQL, Microsoft SQL Server, Redis, MongoDB}
+\skillrow{DevOps \& Tools}{Linux, Docker, Nginx, Git, Laravel Horizon, Redis Queues, REST APIs, JWT Authentication}
+\skillrow{Data}{Pandas, Statistical Analysis, Machine Learning, Web Scraping, Power BI, Streamlit}
+
+\section{Projects}
+{\bfseries Social Media Backend API} \hfill {\small\color{muted}Feb 2024 \ | \ \href{https://github.com/ArsalanMoravvej/Social-Media-App}{github.com/ArsalanMoravvej/Social-Media-App}}\par
+\begin{itemize}
+  \item Built a RESTful API with \textbf{Python}, \textbf{FastAPI} and \textbf{PostgreSQL}, with JWT authentication and secure user and post management.
+\end{itemize}
+{\bfseries Transfermarkt Data Analysis} \hfill {\small\color{muted}May 2023 \ | \ \href{https://github.com/ArsalanMoravvej/Transfermarket-project}{github.com/ArsalanMoravvej/Transfermarket-project}}\par
+\begin{itemize}
+  \item Scraped and stored transfer-market data with \textbf{SQLAlchemy}, trained ML models and built a \textbf{Streamlit} dashboard.
+\end{itemize}
+{\bfseries Superstore Data Warehouse} \hfill {\small\color{muted}Jun 2023 \ | \ \href{https://github.com/ArsalanMoravvej/Superstore}{github.com/ArsalanMoravvej/Superstore}}\par
+\begin{itemize}
+  \item Designed a retail \textbf{data warehouse} and \textbf{Power BI} dashboard with statistical analysis and ML models.
+\end{itemize}
+
+\section{Education}
+{\bfseries B.Sc. Electrical Engineering (Electronics)} \textcolor{accent}{| Iran Technical and Vocational University}\hfill {\small\color{muted}2014 \textendash\ 2019 \ | \ Rasht, Iran}\par
+% Optional: explain the 2019-2023 gap in one line, e.g. military service or self-study, if it applies.
+
+\section{Certificates}
+{\bfseries Task-Oriented Bootcamp in Data Analysis with Python} \textcolor{accent}{| Quera}\hfill {\small\color{muted}Jul 2023 \ \textbar\ \href{https://quera.org/certificate/IZqFa07q/}{\textcolor{accent}{Link}}}\par
+{\bfseries Machine Learning} \textcolor{accent}{| Coursera}\hfill {\small\color{muted}Apr 2022 \ \textbar\ \href{https://www.coursera.org/account/accomplishments/certificate/VVKTE3ZMT7DL}{\textcolor{accent}{Link}}}\par
+{\bfseries Neural Networks and Deep Learning} \textcolor{accent}{| Coursera}\hfill {\small\color{muted}May 2022 \ \textbar\ \href{https://www.coursera.org/account/accomplishments/certificate/EGECLMGFDD9P}{\textcolor{accent}{Link}}}\par
 
 
-        
-        % ----- LANGUAGES -----
-        \cvsection{Languages}
-            \cvlang{Persian}{Native}\\
-            \divider
+\section{Languages}
+Persian (Native) \ | \ English (Advanced, C1) \ | \ German (Elementary, A2)
 
-            \cvlang{English}{Advanced - C1}\\
-            \divider
-
-            \cvlang{German}{Elementary - A2}
-
-
-         % ------------------------------ Second Column ---------------------------
-        \switchcolumn
-        
-        % ----- ABOUT ME -----
-        \cvsection{About Me}
-            
-                {Junior \textbf{Data Analyst}, Interested in acquiring skills and Learning new things, I love solving new challenges, basically anything, especially if it’s about data!
-                Seeking to leverage my analytical skills and expertise to provide valuable insights and facilitate data-driven decision-making.
-                looking forward to being part of a productive team, and grow in its ecosystem.}
-
-        % ----- ABOUT ME -----
-        
-        % ----- EXPERIENCE -----
-        \cvsection{Experience}
-            \cvevent{Data Analysis Internship}{Quera}{Apr 2023 -- Jul 2023}{Remote}
-            \begin{itemize}
-                \item Tools for \textbf{Data Preparation}, \textbf{Visualization} and \textbf{Web Scraping} with Python
-                \item \textbf{Relational Databases}, design and Implementation of a robust and optimized databases from the scratch
-                \item \textbf{Statistical Analysis} of data and developing \textbf{Machine Learning} models
-                \item Creating dashboards and visualizations using tools like \textbf{Microsoft Power BI} and \textbf{Streamlit}
-                \item During this internship I have developed two semi-industrial data analysis projects together with my teammates
-            \end{itemize}
-        % ----- EXPERIENCE -----
-        
-        % ----- EDUCATION -----
-        \cvsection{Education}
-            \cvevent{Associate's Degree}{Iran Technical and Vocational University}{Sept 2014 -- Dec 2016}{Rasht, Guilan}
-            \begin{itemize}
-                \item {Field of Study: Electronics - General Electronics}
-            \end{itemize}
-            \divider
-            
-            \cvevent{Bachelor's Degree}{Iran Technical and Vocational University}{Jan 2017 -- Sept 2019}{Rasht, Guilan}
-            \begin{itemize}
-                \item {Field of Study: Electrical Engineering -  Electronics}
-            \end{itemize}
-        % ----- EDUCATION -----
-        
-        % ----- PROJECTS -----
-        \cvsection{Projects}
-            \cvevent{Transfemarkt Data Analysis}{\cvreference{\faGithub \underline{Github Repository}}{https://github.com/ArsalanMoravvej/Transfermarket-project}}{May 2023}{}
-            \begin{itemize}
-                \item Together with my teammates, we analyzed the \textcolor{accent}{\href{https://www.transfermarkt.com/}{\underline{Transfermarkt}}} site data.
-                \item First, according to the desired analysis, I designed and implemented a suitable database using \textbf{SQLAlchemy} (a library for communication between Python scripts and databases), and then we scraped data with the help of the designed schema.
-                \item By entering the data into the database, everything was ready for \textbf{data cleaning}, \textbf{statistical analysis}, and \textbf{machine learning} model development.
-                \item  Finally, I visualized the steps and results and built a dashboard using \textbf{Streamlit}.
-            \end{itemize}
-            \divider
-            
-            \cvevent{Superstore Data Analysis (a retail store)}{\cvreference{\faGithub \underline{Github Repository}}{https://github.com/ArsalanMoravvej/Superstore}}{June 2023}{}
-            \begin{itemize}
-                \item Together with our teammates, we analyzed the data of \underline{Superstore} (a retail store).
-                \item  First, with the help of the given givern schema, we designed a \textbf{data warehouse} (inside Power BI).
-                \item  Then, based on the data, we performed the desired \textbf{statistical analysis} and the developed \textbf{machine learning} models.
-                \item  Finally, with the help of \textbf{Power BI}, we built a dashboard to illustrate and implement business intelligence.
-            \end{itemize}
-        % ----- PROJECTS -----
-    \end{paracol}
 \end{document}

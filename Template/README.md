@@ -1,11 +1,7 @@
 # Template
 
-[Left] - This is an empty template for the Résumé. (Files `altacv.cls` and `main.tex`)
+An empty, ATS-friendly single-column Résumé template (file `main.tex`). It uses the standard `article` class with the Lato font, so it needs no custom `.cls` file.
 
-[Right] - This the original Project in Overleaf website. ([Original Project](https://www.overleaf.com/latex/templates/altacv-a-nicolasomar-fork/htfpmrwhbwpw))
+To use it, replace every `[ ... ]` placeholder with your own details and compile with `pdflatex` (or upload `main.tex` to [Overleaf](https://www.overleaf.com/) and click **Recompile**).
 
-
-<div>
-  <img src="Template.png" alt="My template" width="400"/>
-  <img src="Original.jpeg" alt="Original" width="400"/>
-</div>
+<img src="Template.png" alt="Template preview" width="500"/>
